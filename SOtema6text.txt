@@ -1,0 +1,5 @@
+In proiect am folosit memoria mapata si un semafor ca sa sincronizez doua procese. Eu am scris tot codul intr-un fisier main.cpp pentru Windows si l-am compilat din Developer Command Prompt cu comanda "cl /EHsc main.cpp". Dupa compilare a rezultat main.exe.
+
+Ca sa vad cum merg doua procese in paralel, am deschis doua ferestre de Developer Command Prompt. In fiecare am intrat in folderul unde era main.exe si l-am rulat. Astfel programul a avut doua instante care lucrau pe aceeasi zona de memorie mapata.
+
+Fiecare proces lua semaforul, citea numarul, dadea cu banul si daca iesea 2 scria urmatorul numar in memorie. Daca nu iesea 2, iesea din bucla si elibera semaforul. Am pastrat logica pana cand numarul ajungea la 1000. Cand primul proces ajungea la 1000, punea finished=1 si celalalt proces vedea asta si se oprea si el.
